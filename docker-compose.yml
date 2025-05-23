@@ -9,7 +9,7 @@ services:
     volumes:
       - ./backend/saved_data:/app/saved_data
     env_file:
-      - ./backend/.env
+      - .env
     depends_on:
       - db
     networks:
@@ -34,7 +34,7 @@ services:
   db:
     image: postgres:15
     env_file:
-      - ./backend/.env
+      - .env
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
